@@ -1646,17 +1646,17 @@ h1 {
 }
 
 .relative {
- width: 100px; /* Set a smaller width */
- height: 100px; /* Set a smaller height */
+ width: 100%; /* Set a smaller width */
+ height: 100%; /* Set a smaller height */
  position: relative; /* Maintain positioning */
 }
 
 .grid-icosahedron {
- width: 90% !important; /* Replace 200px with your desired size */
+ width: 100% !important; /* Replace 200px with your desired size */
  height: 90% !important;
  overflow: hidden;
  border-radius: 50% !important;
- background-color: transparent;
+ background-color: #A0A0A0 !important;
 }
 
 
