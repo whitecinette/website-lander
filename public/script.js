@@ -557,7 +557,9 @@ class Base {
         this.resizeRendererToDisplaySize();
         (_a = this.container) === null || _a === void 0 ? void 0 : _a.appendChild(renderer.domElement);
         this.renderer = renderer;
-        this.renderer.setClearColor(0x000000, 0);
+        renderer.setClearColor(0xA0A0A0, 0); // Solid color with no transparency
+
+
     }
     // 允许投影
     enableShadow() {
@@ -580,7 +582,6 @@ class Base {
         }
         return isResizeNeeded;
     }
-    // 创建网格
     createMesh(meshObject, container = this.scene) {
         const { geometry = new THREE.BoxGeometry(1, 1, 1), material = new THREE.MeshStandardMaterial({
             color: new THREE.Color("#d9dfc8")
@@ -590,7 +591,7 @@ class Base {
         container.add(mesh);
         return mesh;
     }
-    // 创建光源
+   
     createLight() {
         const dirLight = new THREE.DirectionalLight(new THREE.Color("#ffffff"), 0.5);
         dirLight.position.set(0, 50, 0);
@@ -598,7 +599,7 @@ class Base {
         const ambiLight = new THREE.AmbientLight(new THREE.Color("#ffffff"), 0.4);
         this.scene.add(ambiLight);
     }
-    // 创建轨道控制
+  
     createOrbitControls() {
         const controls = new OrbitControls(this.camera, this.renderer.domElement);
         const { lookAtPosition } = this;
@@ -606,11 +607,11 @@ class Base {
         controls.update();
         this.controls = controls;
     }
-    // 监听事件
+   
     addListeners() {
         this.onResize();
     }
-    // 监听画面缩放
+   
     onResize() {
         window.addEventListener("resize", (e) => {
             if (this.camera instanceof THREE.PerspectiveCamera) {
@@ -634,11 +635,11 @@ class Base {
             this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
         });
     }
-    // 动画
+ 
     update() {
         console.log("animation");
     }
-    // 渲染
+  
     setLoop() {
         this.renderer.setAnimationLoop(() => {
             this.resizeRendererToDisplaySize();

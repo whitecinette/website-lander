@@ -1652,11 +1652,11 @@ h1 {
 }
 
 .grid-icosahedron {
- width: 100% !important; /* Replace 200px with your desired size */
+ width: 100% !important;
  height: 90% !important;
  overflow: hidden;
- border-radius: 50% !important;
- background-color: #A0A0A0 !important;
+ /* border-radius: 50% !important; */
+ /* background-color: black !important; */
 }
 
 
