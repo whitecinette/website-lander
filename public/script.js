@@ -9,12 +9,12 @@ import { ShaderPass } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/p
 import gsap from "https://cdn.skypack.dev/gsap@3.6.0";
 const calcAspect = (el) => el.clientWidth / el.clientHeight;
 
-const getNormalizedMousePos = (e) => {
-    return {
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: -(e.clientY / window.innerHeight) * 2 + 1
-    };
-};
+// const getNormalizedMousePos = (e) => {
+//     return {
+//         x: (e.clientX / window.innerWidth) * 2 - 1,
+//         y: -(e.clientY / window.innerHeight) * 2 + 1
+//     };
+// };
 
 const getBaryCoord = (bufferGeometry) => {
     // https://gist.github.com/mattdesl/e399418558b2b52b58f5edeafea3c16c
@@ -486,7 +486,7 @@ class Base {
                 antialias: true
             }
         };
-        this.mousePos = new THREE.Vector2(0, 0);
+        // this.mousePos = new THREE.Vector2(0, 0);
     }
     // 初始化
     init() {
@@ -683,7 +683,6 @@ class Base {
             });
         });
     }
-    // 加载模型
     loadModel(url) {
         const loader = new GLTFLoader();
         return new Promise((resolve, reject) => {
@@ -718,37 +717,37 @@ class Base {
         });
     }
  
-    createRaycaster() {
-        this.raycaster = new THREE.Raycaster();
-        this.trackMousePos();
-    }
+    // createRaycaster() {
+    //     this.raycaster = new THREE.Raycaster();
+    //     // this.trackMousePos();
+    // }
    
-    trackMousePos() {
-        window.addEventListener("mousemove", (e) => {
-            this.setMousePos(e);
-        });
-        window.addEventListener("mouseout", () => {
-            this.clearMousePos();
-        });
-        window.addEventListener("mouseleave", () => {
-            this.clearMousePos();
-        });
-        window.addEventListener("touchstart", (e) => {
-            this.setMousePos(e.touches[0]);
-        }, { passive: false });
-        window.addEventListener("touchmove", (e) => {
-            this.setMousePos(e.touches[0]);
-        });
-        window.addEventListener("touchend", () => {
-            this.clearMousePos();
-        });
-    }
+    // trackMousePos() {
+    //     window.addEventListener("mousemove", (e) => {
+    //         this.setMousePos(e);
+    //     });
+    //     window.addEventListener("mouseout", () => {
+    //         this.clearMousePos();
+    //     });
+    //     window.addEventListener("mouseleave", () => {
+    //         this.clearMousePos();
+    //     });
+    //     window.addEventListener("touchstart", (e) => {
+    //         this.setMousePos(e.touches[0]);
+    //     }, { passive: false });
+    //     window.addEventListener("touchmove", (e) => {
+    //         this.setMousePos(e.touches[0]);
+    //     });
+    //     window.addEventListener("touchend", () => {
+    //         this.clearMousePos();
+    //     });
+    // }
     // 设置鼠标位置
-    setMousePos(e) {
-        const { x, y } = getNormalizedMousePos(e);
-        this.mousePos.x = x;
-        this.mousePos.y = y;
-    }
+    // setMousePos(e) {
+    //     const { x, y } = getNormalizedMousePos(e);
+    //     this.mousePos.x = x;
+    //     this.mousePos.y = y;
+    // }
     // 清空鼠标位置
     clearMousePos() {
         this.mousePos.x = -100000;

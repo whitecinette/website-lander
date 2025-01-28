@@ -1448,7 +1448,7 @@
 
   // about white cinette
 document.addEventListener("DOMContentLoaded", () => {
-        const text = "White Cinette turns ideas into reality with expert web design, development, mobile apps, and SEO. We create impactful solutions to grow your brand and inspire success.";
+        const text = "We are a passionate tech company redefining the boundaries of possibility. From innovative AI to tailored business solutions, we’re building a smarter, more connected tomorrow.";
         const typingElement = document.getElementById("typing-effect");
         let index = 0;
 
