@@ -9,12 +9,12 @@ import { ShaderPass } from "https://cdn.skypack.dev/three@0.124.0/examples/jsm/p
 import gsap from "https://cdn.skypack.dev/gsap@3.6.0";
 const calcAspect = (el) => el.clientWidth / el.clientHeight;
 
-// const getNormalizedMousePos = (e) => {
-//     return {
-//         x: (e.clientX / window.innerWidth) * 2 - 1,
-//         y: -(e.clientY / window.innerHeight) * 2 + 1
-//     };
-// };
+const getNormalizedMousePos = (e) => {
+    return {
+        x: (e.clientX / window.innerWidth) * 2 - 1,
+        y: -(e.clientY / window.innerHeight) * 2 + 1
+    };
+};
 
 const getBaryCoord = (bufferGeometry) => {
     // https://gist.github.com/mattdesl/e399418558b2b52b58f5edeafea3c16c
@@ -486,7 +486,7 @@ class Base {
                 antialias: true
             }
         };
-        // this.mousePos = new THREE.Vector2(0, 0);
+        this.mousePos = new THREE.Vector2(0, 0);
     }
     // 初始化
     init() {

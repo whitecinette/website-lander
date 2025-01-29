@@ -1462,3 +1462,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
         typeEffect();
     });
+
+    
