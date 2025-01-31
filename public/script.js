@@ -658,7 +658,6 @@ class Base {
             }
         });
     }
-    // 创建文本
     createText(text = "", config, material = new THREE.MeshStandardMaterial({
         color: "#ffffff"
     })) {
